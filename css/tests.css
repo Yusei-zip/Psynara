@@ -1,0 +1,264 @@
+/* Tests Section Styles */
+
+.autoevaluacion {
+    background-color: var(--light-bg);
+    position: relative;
+}
+
+.disclaimer-notice {
+    background-color: rgba(145, 153, 98, 0.15); /* verde salvia muy claro */
+    border-left: 4px solid var(--sage-green);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: var(--text-strong);
+}
+
+#test-app-root {
+    min-height: 300px;
+}
+
+/* Test Cards (List View) */
+.tests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.test-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(64, 42, 48, 0.05);
+    border-top: 4px solid var(--dusty-rose);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.test-card:hover {
+    transform: translateY(-5px);
+}
+
+.test-card h3 {
+    color: var(--dusty-rose);
+    margin-bottom: 0.5rem;
+}
+
+.test-duration {
+    font-size: 0.85rem;
+    color: var(--sage-green);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.test-card p {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Test Flow View */
+.test-container {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(64, 42, 48, 0.08);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.test-header h2 {
+    margin-bottom: 0;
+    color: var(--text-strong);
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    color: var(--sage-green);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.btn-back:hover {
+    color: var(--text-strong);
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    height: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--cta-btn);
+    transition: width 0.3s ease;
+}
+
+/* Question View */
+.question-block {
+    margin-bottom: 2rem;
+}
+
+.question-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-strong);
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-btn {
+    background: #fdfdfd;
+    border: 2px solid #eaeaea;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-strong);
+}
+
+.option-btn:hover {
+    border-color: var(--sage-green);
+    background: rgba(145, 153, 98, 0.05);
+}
+
+.option-btn.selected {
+    border-color: var(--cta-btn);
+    background: rgba(217, 102, 91, 0.05);
+    font-weight: 500;
+}
+
+/* Results View */
+.result-container {
+    text-align: center;
+}
+
+.result-container h2 {
+    color: var(--dusty-rose);
+    margin-bottom: 1rem;
+}
+
+.result-score {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-strong);
+    margin: 1rem 0;
+}
+
+.result-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* WhatsApp Share Section */
+.share-container {
+    background: rgba(145, 153, 98, 0.05);
+    border: 1px solid rgba(145, 153, 98, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.share-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s;
+}
+
+.share-input:focus {
+    outline: none;
+    border-color: var(--sage-green);
+}
+
+.share-error {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.whatsapp-share-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #25D366;
+    color: white;
+    border: none;
+}
+
+.whatsapp-share-btn:hover {
+    background-color: #1ebe57;
+    color: white;
+}
+
+.whatsapp-share-btn.btn-success {
+    background-color: var(--sage-green);
+    color: white;
+    cursor: default;
+}
+
+.whatsapp-share-btn.btn-success:hover {
+    background-color: var(--sage-green);
+}
+
+.pop-anim {
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.share-feedback p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}

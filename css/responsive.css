@@ -1,0 +1,195 @@
+/* responsive.css - Capa adicional de estilos responsivos */
+/* Principio fundamental: No reescribir lógica de desktop, solo adaptar para pantallas más pequeñas. */
+
+/* =========================================
+   Tablets y Portátiles Pequeñas (max-width: 992px)
+   ========================================= */
+@media screen and (max-width: 992px) {
+    /* Tipografía y Espaciados Generales */
+    html {
+        font-size: 95%; /* Reduce la fuente base ligeramente */
+    }
+    
+    section {
+        padding: 4rem 0; /* Menos padding vertical en secciones para aprovechar espacio */
+    }
+
+    /* Jerarquía visual (Títulos) */
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.4rem; }
+
+    /* Ajustes del Sistema de Tests */
+    .test-container {
+        padding: 2.5rem 2rem;
+    }
+}
+
+/* =========================================
+   Teléfonos Móviles (max-width: 768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    /* Tipografía y Espaciados Generales */
+    html {
+        font-size: 90%; /* Escala la tipografía para móviles */
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+    p { font-size: 1.05rem; }
+
+    /* Asegurar que todas las imágenes y contenedores sean fluidos */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .container {
+        width: 92%;
+    }
+
+    /* Navbar y Menú */
+    /* La lógica base de .menu-toggle y nav-links está en style.css, 
+       aquí reforzamos la usabilidad del menú desplegado. */
+    .nav-links {
+        padding: 1.5rem 0;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 1rem 0;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 0.8rem; /* Aumenta el área táctil */
+    }
+    
+    .nav-links .btn {
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    /* Botones más amigables al tacto */
+    .btn {
+        padding: 0.9rem 1.5rem;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding-top: 100px; /* Evitar que el header fijo tape el contenido */
+    }
+    
+    .hero .empathy-text {
+        font-size: 1.2rem;
+    }
+    
+    .hero p {
+        margin: 0 auto 1.5rem;
+    }
+    
+    .hero-content .btn {
+        width: 100%; /* Call to Action principal a pantalla completa en móvil */
+        text-align: center;
+    }
+
+    /* Formularios y Contacto */
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem;
+    }
+
+    .contact-wrapper {
+        border-radius: 15px;
+    }
+    
+    .contact-info {
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-form .btn {
+        width: 100%;
+    }
+    
+    /* Sistema de Tests */
+    .test-container {
+        padding: 1.5rem 1.2rem;
+        border-radius: 15px;
+    }
+    
+    .test-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .btn-back {
+        padding: 0.5rem 0; /* Asegurar área táctil */
+    }
+    
+    .options-grid .option-btn {
+        padding: 1.2rem 1rem; /* Área táctil más grande para opciones */
+    }
+    
+    .result-score {
+        font-size: 2.5rem;
+    }
+    
+    .result-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .result-actions .btn {
+        width: 100%;
+    }
+    
+    .share-container {
+        padding: 1.5rem;
+    }
+    
+    .share-feedback p {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* =========================================
+   Móviles Pequeños (max-width: 480px)
+   ========================================= */
+@media screen and (max-width: 480px) {
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.6rem; }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
