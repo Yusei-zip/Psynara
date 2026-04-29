@@ -69,4 +69,27 @@ document.addEventListener('DOMContentLoaded', () => {
             form.reset();
         });
     }
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+
+    if (themeToggleBtn && themeIcon) {
+        // Inicializar icono según estado actual
+        if (document.documentElement.classList.contains('dark-mode')) {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark-mode');
+            
+            // Actualizar icono y guardar preferencia
+            if (isDark) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('psynara_theme', 'dark');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('psynara_theme', 'light');
+            }
+        });
+    }
 });

@@ -303,6 +303,83 @@ export class TestRender {
         btnList.textContent = 'Ver otros tests';
         btnList.onclick = onBackToList;
 
+        const btnDownload = document.createElement('button');
+        btnDownload.className = 'btn btn-primary';
+        btnDownload.innerHTML = '<i class="fas fa-download"></i> Descargar resultado';
+        btnDownload.onclick = async () => {
+            if (typeof html2canvas === 'undefined') {
+                alert('La librería de captura no está cargada.');
+                return;
+            }
+
+            // Create a hidden, off-screen printable container
+            const printDiv = document.createElement('div');
+            printDiv.style.position = 'absolute';
+            printDiv.style.left = '-9999px';
+            printDiv.style.top = '0';
+            printDiv.style.width = '600px';
+            printDiv.style.padding = '40px';
+            printDiv.style.background = '#fdf6ec'; // Force light theme background (Beige arena)
+            printDiv.style.color = '#402A30'; // Force light theme text (Ciruela oscuro)
+            printDiv.style.fontFamily = 'Inter, sans-serif';
+            printDiv.style.borderRadius = '15px';
+            printDiv.style.boxSizing = 'border-box';
+            
+            const userName = nameInput.value.trim() || 'Anónimo';
+            const dateStr = new Date().toLocaleDateString();
+
+            printDiv.innerHTML = `
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h1 style="font-size: 24px; font-weight: 700; color: #733F4D; margin-bottom: 5px;">Psic. Francisca Gonzalez</h1>
+                    <p style="font-size: 14px; color: #919962;">Resultados de Autoevaluación</p>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #e0d5c1; margin-bottom: 20px;">
+                <div style="margin-bottom: 20px;">
+                    <p style="margin-bottom: 5px;"><strong>Paciente / Usuario:</strong> ${userName}</p>
+                    <p style="margin-bottom: 5px;"><strong>Test:</strong> ${testTitle}</p>
+                    <p style="margin-bottom: 5px;"><strong>Fecha:</strong> ${dateStr}</p>
+                </div>
+                <div style="background: #ffffff; padding: 20px; border-radius: 10px; border-left: 5px solid #D9665B; margin-bottom: 20px;">
+                    <h2 style="font-size: 20px; color: #D9665B; margin-bottom: 10px;">${resultData.title}</h2>
+                    <p style="font-size: 16px; margin-bottom: 10px;"><strong>Puntaje Obtenido:</strong> ${resultData.score}</p>
+                    <p style="font-size: 15px; line-height: 1.6;">${resultData.description}</p>
+                </div>
+                <div style="background: rgba(145, 153, 98, 0.15); padding: 15px; border-radius: 8px; font-size: 13px; color: #402A30;">
+                    <strong>Nota Importante:</strong> Este resultado es puramente orientativo y tiene el propósito de ayudarte a identificar posibles áreas de atención. No constituye un diagnóstico médico ni psicológico profesional.
+                </div>
+            `;
+
+            document.body.appendChild(printDiv);
+
+            try {
+                const originalText = btnDownload.innerHTML;
+                btnDownload.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando...';
+                btnDownload.disabled = true;
+
+                const canvas = await html2canvas(printDiv, {
+                    scale: 2, 
+                    useCORS: true,
+                    backgroundColor: '#fdf6ec'
+                });
+
+                const link = document.createElement('a');
+                link.download = `Resultado_${testTitle.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                btnDownload.innerHTML = originalText;
+                btnDownload.disabled = false;
+            } catch (err) {
+                console.error("Error al generar la imagen", err);
+                alert("Hubo un error al generar la imagen. Inténtalo de nuevo.");
+                btnDownload.innerHTML = '<i class="fas fa-download"></i> Descargar resultado';
+                btnDownload.disabled = false;
+            } finally {
+                document.body.removeChild(printDiv);
+            }
+        };
+
+        actions.appendChild(btnDownload);
         actions.appendChild(btnAgenda);
         actions.appendChild(btnList);
         resContainer.appendChild(actions);

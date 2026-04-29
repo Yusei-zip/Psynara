@@ -1,0 +1,130 @@
+/* theme.css - Sistema de Temas (Claro / Oscuro) */
+
+/* Transiciones suaves para los cambios de tema */
+body, header, section, div, p, h1, h2, h3, h4, span, a, button, input, textarea, .test-card, .service-card, .identify-card, .timeline-content, .testimonial-card, .contact-info, .contact-form, .contact-wrapper {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* =========================================
+   Modo Oscuro (Dark Mode)
+   ========================================= */
+.dark-mode body {
+    /* Sobrescribir variables base de style.css */
+    --primary-bg: #1E1A1C; /* Fondo principal oscuro */
+    --light-bg: #2A2426;   /* Fondo secundario oscuro */
+    --white: #352D30;      /* Color base para tarjetas (en lugar de blanco puro) */
+    
+    --text-strong: #FDF6EC; /* Texto claro */
+    
+    /* Ajustes sutiles para los colores de acento en fondos oscuros */
+    --cta-btn: #E57A70;     /* Terracota un poco más brillante */
+    --cta-hover: #D9665B;
+    --sage-green: #A3AC76;  /* Salvia un poco más claro para contraste */
+    --dusty-rose: #B87687;  /* Rosa viejo más visible */
+}
+
+/* Ajustes Específicos para Modo Oscuro que las variables no cubren por completo */
+
+.dark-mode header {
+    background-color: rgba(30, 26, 28, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .nav-links {
+    background-color: var(--primary-bg); /* Para menú móvil */
+}
+
+.dark-mode .menu-toggle span {
+    background-color: var(--text-strong);
+}
+
+.dark-mode .hero-bg-shape {
+    opacity: 0.1; /* Reducir brillo del blob de fondo */
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea,
+.dark-mode .share-input {
+    background-color: #231E20;
+    color: var(--text-strong);
+    border-color: #4A3E42;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group textarea:focus,
+.dark-mode .share-input:focus {
+    border-color: var(--sage-green);
+    background-color: #2A2426;
+}
+
+.dark-mode .contact-wrapper,
+.dark-mode .test-card,
+.dark-mode .identify-card,
+.dark-mode .timeline-content,
+.dark-mode .testimonial-card,
+.dark-mode .test-container {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombras más fuertes para que destaquen sobre fondo oscuro */
+}
+
+.dark-mode .services {
+    background-color: #252A1C; /* Un verde muy oscuro para contraste de la sección de servicios */
+}
+
+.dark-mode .services-grid .service-card h3 {
+    color: #FDF6EC;
+}
+
+.dark-mode .testimonial-card::before {
+    color: #4A3E42; /* Comillas en fondo oscuro */
+}
+
+.dark-mode .option-btn {
+    background-color: #2A2426;
+    border-color: #4A3E42;
+}
+
+.dark-mode .option-btn:hover {
+    background-color: rgba(163, 172, 118, 0.1); /* Salvia con opacidad */
+    border-color: var(--sage-green);
+}
+
+.dark-mode .option-btn.selected {
+    background-color: rgba(229, 122, 112, 0.1); /* Terracota con opacidad */
+    border-color: var(--cta-btn);
+}
+
+.dark-mode .progress-container {
+    background-color: #4A3E42;
+}
+
+.dark-mode .disclaimer-notice {
+    background-color: rgba(163, 172, 118, 0.1);
+    color: var(--text-strong);
+}
+
+/* =========================================
+   Estilos del Theme Toggle Button
+   ========================================= */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-strong);
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(115, 63, 77, 0.1); /* Rosa viejo con opacidad */
+    transform: scale(1.1);
+}
+
+.dark-mode .theme-toggle:hover {
+    background-color: rgba(253, 246, 236, 0.1);
+}
