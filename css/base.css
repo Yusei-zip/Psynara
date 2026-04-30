@@ -1,0 +1,96 @@
+/* =========================================
+   Base & Reset
+   ========================================= */
+:root {
+    /* Brand Colors (Legacy & Base) */
+    --primary-bg: #F2CEA2; /* Beige arena */
+    --light-bg: #fdf6ec; /* Lighter beige for sections */
+    --white: #ffffff;
+    --text-strong: #402A30; /* Ciruela oscuro */
+    --cta-btn: #D9665B; /* Terracota */
+    --cta-hover: #c4554b;
+    --sage-green: #919962; /* Verde salvia */
+    --dusty-rose: #733F4D; /* Rosa viejo */
+    
+    /* New Semantic Surfaces */
+    --surface-card: var(--white);
+    --surface-input: #fafafa;
+    --surface-input-focus: var(--white);
+    
+    /* New Text Colors */
+    --text-secondary: #555555;
+    --text-muted: rgba(64, 42, 48, 0.7);
+    --text-inverse: #ffffff;
+    
+    /* Borders */
+    --border-light: #eeeeee;
+    --border-input: #dddddd;
+    --border-focus: var(--dusty-rose);
+    
+    /* Semantic Colors */
+    --color-success: #25D366;
+    --color-success-hover: #1ebe57;
+    --color-error: #d9534f;
+
+    /* Transparency Overlays */
+    --overlay-sage-light: rgba(145, 153, 98, 0.05);
+    --overlay-sage-medium: rgba(145, 153, 98, 0.15);
+    --overlay-sage-border: rgba(145, 153, 98, 0.2);
+    --overlay-terracota-light: rgba(217, 102, 91, 0.05);
+    --overlay-white-10: rgba(255, 255, 255, 0.1);
+    --overlay-white-15: rgba(255, 255, 255, 0.15);
+    --overlay-white-20: rgba(255, 255, 255, 0.2);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 10px rgba(64, 42, 48, 0.05);
+    --shadow-md: 0 10px 30px rgba(64, 42, 48, 0.05);
+    --shadow-lg: 0 15px 40px rgba(64, 42, 48, 0.08);
+    --shadow-btn: 0 4px 15px rgba(217, 102, 91, 0.3);
+    --shadow-btn-hover: 0 6px 20px rgba(217, 102, 91, 0.4);
+    --shadow-float: 2px 2px 10px rgba(0,0,0,0.2);
+    --shadow-timeline: 0 5px 15px rgba(64, 42, 48, 0.05);
+    
+    /* Specific Element Backgrounds */
+    --header-bg: rgba(242, 206, 162, 0.95);
+    --timeline-dot: rgba(217, 102, 91, 0.2);
+    --text-white-dim: rgba(255, 255, 255, 0.7);
+    --text-white-med: rgba(255, 255, 255, 0.9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-strong);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-strong);
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

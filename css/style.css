@@ -1,12 +1,57 @@
 :root {
-    --primary-bg: #F2CEA2; /* Beige arena */
-    --text-strong: #402A30; /* Ciruela oscuro */
-    --cta-btn: #D9665B; /* Terracota */
-    --cta-hover: #c4554b;
-    --sage-green: #919962; /* Verde salvia */
-    --dusty-rose: #733F4D; /* Rosa viejo */
+    /* Brand Colors */
+    --primary-bg: #F2CEA2;
+    --light-bg: #fdf6ec;
     --white: #ffffff;
-    --light-bg: #fdf6ec; /* Lighter beige for sections */
+    --text-strong: #402A30;
+    --cta-btn: #D9665B;
+    --cta-hover: #c4554b;
+    --sage-green: #919962;
+    --dusty-rose: #733F4D;
+    
+    /* Surfaces */
+    --surface-card: var(--white);
+    --surface-input: #fafafa;
+    --surface-input-focus: var(--white);
+    
+    /* Text */
+    --text-secondary: #555555;
+    --text-muted: rgba(64, 42, 48, 0.7);
+    --text-inverse: #ffffff;
+    
+    /* Borders */
+    --border-light: #eeeeee;
+    --border-input: #dddddd;
+    --border-focus: var(--dusty-rose);
+    
+    /* Semantic */
+    --color-success: #25D366;
+    --color-success-hover: #1ebe57;
+    --color-error: #d9534f;
+
+    /* Overlays */
+    --overlay-sage-light: rgba(145, 153, 98, 0.05);
+    --overlay-sage-medium: rgba(145, 153, 98, 0.15);
+    --overlay-sage-border: rgba(145, 153, 98, 0.2);
+    --overlay-terracota-light: rgba(217, 102, 91, 0.05);
+    --overlay-white-10: rgba(255, 255, 255, 0.1);
+    --overlay-white-15: rgba(255, 255, 255, 0.15);
+    --overlay-white-20: rgba(255, 255, 255, 0.2);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 10px rgba(64, 42, 48, 0.05);
+    --shadow-md: 0 10px 30px rgba(64, 42, 48, 0.05);
+    --shadow-lg: 0 15px 40px rgba(64, 42, 48, 0.08);
+    --shadow-timeline: 0 5px 15px rgba(64, 42, 48, 0.05);
+    --shadow-btn: 0 4px 15px rgba(217, 102, 91, 0.3);
+    --shadow-btn-hover: 0 6px 20px rgba(217, 102, 91, 0.4);
+    --shadow-float: 2px 2px 10px rgba(0,0,0,0.2);
+    
+    /* Misc */
+    --header-bg: rgba(242, 206, 162, 0.95);
+    --timeline-dot: rgba(217, 102, 91, 0.2);
+    --text-white-dim: rgba(255, 255, 255, 0.7);
+    --text-white-med: rgba(255, 255, 255, 0.9);
 }
 
 * {
@@ -67,13 +112,13 @@ img {
 .btn-primary {
     background-color: var(--cta-btn);
     color: var(--white);
-    box-shadow: 0 4px 15px rgba(217, 102, 91, 0.3);
+    box-shadow: var(--shadow-btn);
 }
 
 .btn-primary:hover {
     background-color: var(--cta-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(217, 102, 91, 0.4);
+    box-shadow: var(--shadow-btn-hover);
 }
 
 .btn-outline {
@@ -103,10 +148,10 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(242, 206, 162, 0.95);
+    background-color: var(--header-bg);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(64, 42, 48, 0.05);
+    box-shadow: var(--shadow-sm);
 }
 
 nav {
@@ -210,7 +255,7 @@ nav {
 
 .hero-image img {
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(64, 42, 48, 0.1);
+    box-shadow: var(--shadow-lg);
     max-width: 90%;
 }
 
@@ -240,10 +285,10 @@ nav {
 }
 
 .identify-card {
-    background: var(--white);
+    background: var(--surface-card);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(64, 42, 48, 0.05);
+    box-shadow: var(--shadow-md);
     border-top: 4px solid var(--dusty-rose);
     transition: transform 0.3s ease;
 }
@@ -275,7 +320,7 @@ nav {
 
 .about-image img {
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(64, 42, 48, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .about-text {
@@ -312,16 +357,16 @@ nav {
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--overlay-white-10);
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--overlay-white-20);
     transition: background 0.3s ease;
 }
 
 .service-card:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--overlay-white-15);
 }
 
 .service-card h3 {
@@ -366,14 +411,14 @@ nav {
     border-radius: 50%;
     left: 12px;
     top: 25px;
-    box-shadow: 0 0 0 4px rgba(217, 102, 91, 0.2);
+    box-shadow: 0 0 0 4px var(--timeline-dot);
 }
 
 .timeline-content {
-    background: var(--white);
+    background: var(--surface-card);
     padding: 1.5rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(64, 42, 48, 0.05);
+    box-shadow: var(--shadow-timeline);
 }
 
 .timeline-content h3 {
@@ -392,11 +437,11 @@ nav {
 }
 
 .testimonial-card {
-    background: var(--white);
+    background: var(--surface-card);
     padding: 2rem;
     border-radius: 15px;
     position: relative;
-    box-shadow: 0 10px 30px rgba(64, 42, 48, 0.05);
+    box-shadow: var(--shadow-md);
 }
 
 .testimonial-card::before {
@@ -430,10 +475,10 @@ nav {
 .contact-wrapper {
     display: flex;
     gap: 4rem;
-    background: var(--white);
+    background: var(--surface-card);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(64, 42, 48, 0.08);
+    box-shadow: var(--shadow-lg);
 }
 
 .contact-info {
@@ -449,7 +494,7 @@ nav {
 }
 
 .contact-info p {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-white-med);
 }
 
 .contact-details {
@@ -487,19 +532,19 @@ nav {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-input);
     border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
     transition: border-color 0.3s;
-    background-color: #fafafa;
+    background-color: var(--surface-input);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--dusty-rose);
-    background-color: var(--white);
+    background-color: var(--surface-card);
 }
 
 .whatsapp-btn-large {
@@ -507,7 +552,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    background-color: #25D366;
+    background-color: var(--color-success);
     color: white;
     padding: 1rem;
     border-radius: 50px;
@@ -517,7 +562,7 @@ nav {
 }
 
 .whatsapp-btn-large:hover {
-    background-color: #1ebe57;
+    background-color: var(--color-success-hover);
     transform: translateY(-2px);
 }
 
@@ -556,7 +601,7 @@ footer {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--overlay-white-10);
     transition: background 0.3s, transform 0.3s;
 }
 
@@ -568,9 +613,9 @@ footer {
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--overlay-white-10);
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-white-dim);
 }
 
 /* Floating WhatsApp Button */
@@ -580,12 +625,12 @@ footer {
     right: 30px;
     width: 60px;
     height: 60px;
-    background-color: #25D366;
+    background-color: var(--color-success);
     color: #FFF;
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-float);
     z-index: 1000;
     display: flex;
     align-items: center;

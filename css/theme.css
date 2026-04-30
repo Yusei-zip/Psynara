@@ -8,98 +8,93 @@ body, header, section, div, p, h1, h2, h3, h4, span, a, button, input, textarea,
 /* =========================================
    Modo Oscuro (Dark Mode)
    ========================================= */
-.dark-mode body {
-    /* Sobrescribir variables base de style.css */
-    --primary-bg: #1E1A1C; /* Fondo principal oscuro */
-    --light-bg: #2A2426;   /* Fondo secundario oscuro */
-    --white: #352D30;      /* Color base para tarjetas (en lugar de blanco puro) */
+.dark-mode {
+    /* Brand Colors (Adjusted for dark mode contrast) */
+    --primary-bg: #1A1618; /* Fondo principal muy oscuro */
+    --light-bg: #231E20;   /* Fondo secundario oscuro */
+    --white: #2D2628;      /* Color base para tarjetas y contenedores (en lugar de blanco puro) */
     
-    --text-strong: #FDF6EC; /* Texto claro */
+    --text-strong: #FDF6EC; /* Texto claro principal */
+    --text-secondary: #D4C5C9; /* Texto secundario suave */
+    --text-muted: rgba(253, 246, 236, 0.6);
+    --text-inverse: #402A30; /* Texto que va sobre fondos primarios (como el botón terracota) */
     
-    /* Ajustes sutiles para los colores de acento en fondos oscuros */
-    --cta-btn: #E57A70;     /* Terracota un poco más brillante */
+    /* Brand Accents (Slightly brighter for dark mode visibility) */
+    --cta-btn: #E57A70;     
     --cta-hover: #D9665B;
-    --sage-green: #A3AC76;  /* Salvia un poco más claro para contraste */
-    --dusty-rose: #B87687;  /* Rosa viejo más visible */
+    --sage-green: #AAB381;  
+    --dusty-rose: #C28292;  
+    
+    /* Surfaces */
+    --surface-card: var(--white);
+    --surface-input: #231E20;
+    --surface-input-focus: #1A1618;
+    
+    /* Borders */
+    --border-light: #3D3538;
+    --border-input: #4A3E42;
+    --border-focus: var(--sage-green);
+    
+    /* Semantic Colors */
+    --color-success: #25D366; /* Keep readable */
+    --color-success-hover: #1ebe57;
+    --color-error: #E57A70;
+    
+    /* Overlays (Recalculated for dark bg) */
+    --overlay-sage-light: rgba(170, 179, 129, 0.1);
+    --overlay-sage-medium: rgba(170, 179, 129, 0.15);
+    --overlay-sage-border: rgba(170, 179, 129, 0.25);
+    --overlay-terracota-light: rgba(229, 122, 112, 0.1);
+    --overlay-white-10: rgba(255, 255, 255, 0.05);
+    --overlay-white-15: rgba(255, 255, 255, 0.08);
+    --overlay-white-20: rgba(255, 255, 255, 0.12);
+    
+    /* Shadows (Darker and stronger for dark mode depth) */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.4);
+    --shadow-timeline: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --shadow-btn: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --shadow-btn-hover: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --shadow-float: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    
+    /* Misc */
+    --header-bg: rgba(30, 26, 28, 0.95);
+    --timeline-dot: rgba(229, 122, 112, 0.2);
+    --text-white-dim: rgba(253, 246, 236, 0.6);
+    --text-white-med: rgba(253, 246, 236, 0.85);
 }
 
-/* Ajustes Específicos para Modo Oscuro que las variables no cubren por completo */
-
-.dark-mode header {
-    background-color: rgba(30, 26, 28, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+/* =========================================
+   Ajustes Específicos Adicionales
+   ========================================= */
+/* Ajuste de color para la opción seleccionada en los tests */
+.dark-mode .option-btn.selected {
+    font-weight: 600;
 }
 
-.dark-mode .nav-links {
-    background-color: var(--primary-bg); /* Para menú móvil */
+/* Ajuste del blob de fondo en el Hero para que no brille tanto en oscuro */
+.dark-mode .hero-bg-shape {
+    opacity: 0.1; 
 }
 
+/* Color específico para las comillas en testimonios para que destaquen en oscuro */
+.dark-mode .testimonial-card::before {
+    color: #4A3E42; 
+}
+
+/* Modificadores de la sección de Servicios para que mantenga contraste */
+.dark-mode .services {
+    background-color: #252A1C; /* Verde muy oscuro */
+}
+.dark-mode .services h2, 
+.dark-mode .services-grid .service-card h3 {
+    color: var(--text-strong);
+}
+
+/* Ajuste del icono del menú hamburguesa */
 .dark-mode .menu-toggle span {
     background-color: var(--text-strong);
-}
-
-.dark-mode .hero-bg-shape {
-    opacity: 0.1; /* Reducir brillo del blob de fondo */
-}
-
-.dark-mode .form-group input,
-.dark-mode .form-group textarea,
-.dark-mode .share-input {
-    background-color: #231E20;
-    color: var(--text-strong);
-    border-color: #4A3E42;
-}
-
-.dark-mode .form-group input:focus,
-.dark-mode .form-group textarea:focus,
-.dark-mode .share-input:focus {
-    border-color: var(--sage-green);
-    background-color: #2A2426;
-}
-
-.dark-mode .contact-wrapper,
-.dark-mode .test-card,
-.dark-mode .identify-card,
-.dark-mode .timeline-content,
-.dark-mode .testimonial-card,
-.dark-mode .test-container {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombras más fuertes para que destaquen sobre fondo oscuro */
-}
-
-.dark-mode .services {
-    background-color: #252A1C; /* Un verde muy oscuro para contraste de la sección de servicios */
-}
-
-.dark-mode .services-grid .service-card h3 {
-    color: #FDF6EC;
-}
-
-.dark-mode .testimonial-card::before {
-    color: #4A3E42; /* Comillas en fondo oscuro */
-}
-
-.dark-mode .option-btn {
-    background-color: #2A2426;
-    border-color: #4A3E42;
-}
-
-.dark-mode .option-btn:hover {
-    background-color: rgba(163, 172, 118, 0.1); /* Salvia con opacidad */
-    border-color: var(--sage-green);
-}
-
-.dark-mode .option-btn.selected {
-    background-color: rgba(229, 122, 112, 0.1); /* Terracota con opacidad */
-    border-color: var(--cta-btn);
-}
-
-.dark-mode .progress-container {
-    background-color: #4A3E42;
-}
-
-.dark-mode .disclaimer-notice {
-    background-color: rgba(163, 172, 118, 0.1);
-    color: var(--text-strong);
 }
 
 /* =========================================
@@ -121,10 +116,10 @@ body, header, section, div, p, h1, h2, h3, h4, span, a, button, input, textarea,
 }
 
 .theme-toggle:hover {
-    background-color: rgba(115, 63, 77, 0.1); /* Rosa viejo con opacidad */
+    background-color: var(--overlay-terracota-light);
     transform: scale(1.1);
 }
 
 .dark-mode .theme-toggle:hover {
-    background-color: rgba(253, 246, 236, 0.1);
+    background-color: var(--overlay-white-10);
 }
