@@ -25,57 +25,52 @@ textarea,
 
 
 .dark-mode {
-
-    --primary-bg: #1A1618;
-
-    --light-bg: #231E20;
-
-    --white: #2D2628;
-
-    --text-strong: #FDF6EC;
-    --text-secondary: #D4C5C9;
-    --text-muted: rgba(253, 246, 236, 0.6);
-    --text-inverse: #d7d4d5;
-
-    --cta-btn: #E57A70;
+    --primary-bg: #1A1113;
+    --light-bg: #23181A;
+    --white: #2D1F22;
+    
+    --text-strong: #F5E6D3;
+    --text-secondary: #D1B9BC;
+    --text-muted: rgba(245, 230, 211, 0.6);
+    --text-inverse: #1A1113;
+    
+    --cta-btn: #E0827A;
     --cta-hover: #D9665B;
-    --sage-green: #AAB381;
-    --dusty-rose: #C28292;
-
+    --sage-green: #B5BC92;
+    --dusty-rose: #A66D7B;
+    
     --surface-card: var(--white);
-    --surface-input: #231E20;
-    --surface-input-focus: #1A1618;
-
-    --border-light: #3D3538;
-    --border-input: #4A3E42;
+    --surface-input: #1A1113;
+    --surface-input-focus: #23181A;
+    
+    --border-light: #3D2B2E;
+    --border-input: #4A3539;
     --border-focus: var(--sage-green);
-
+    
     --color-success: #25D366;
     --color-success-hover: #1ebe57;
-    --color-error: #E57A70;
-
-    --overlay-sage-light: rgba(170, 179, 129, 0.1);
-    --overlay-sage-medium: rgba(170, 179, 129, 0.15);
-    --overlay-sage-border: rgba(170, 179, 129, 0.25);
-    --overlay-terracota-light: rgba(229, 122, 112, 0.1);
+    --color-error: #E0827A;
+    
+    --overlay-sage-light: rgba(181, 188, 146, 0.1);
+    --overlay-sage-medium: rgba(181, 188, 146, 0.15);
+    --overlay-sage-border: rgba(181, 188, 146, 0.25);
+    --overlay-terracota-light: rgba(224, 130, 122, 0.1);
     --overlay-white-10: rgba(255, 255, 255, 0.05);
     --overlay-white-15: rgba(255, 255, 255, 0.08);
     --overlay-white-20: rgba(255, 255, 255, 0.12);
-
-    /* Shadows (Darker and stronger for dark mode depth) */
-    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.4);
-    --shadow-timeline: 0 5px 15px rgba(0, 0, 0, 0.2);
-    --shadow-btn: 0 4px 15px rgba(0, 0, 0, 0.3);
-    --shadow-btn-hover: 0 6px 20px rgba(0, 0, 0, 0.4);
-    --shadow-float: 2px 2px 10px rgba(0, 0, 0, 0.4);
-
-    /* Misc */
-    --header-bg: rgba(30, 26, 28, 0.95);
-    --timeline-dot: rgba(229, 122, 112, 0.2);
-    --text-white-dim: rgba(253, 246, 236, 0.6);
-    --text-white-med: rgba(253, 246, 236, 0.85);
+    
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.6);
+    --shadow-timeline: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --shadow-btn: 0 4px 15px rgba(0, 0, 0, 0.4);
+    --shadow-btn-hover: 0 6px 20px rgba(0, 0, 0, 0.5);
+    --shadow-float: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    
+    --header-bg: rgba(26, 17, 19, 0.95);
+    --timeline-dot: rgba(224, 130, 122, 0.2);
+    --text-white-dim: rgba(245, 230, 211, 0.7);
+    --text-white-med: rgba(245, 230, 211, 0.9);
 }
 
 /* Ajuste de color para la opción seleccionada en los tests */
@@ -90,14 +85,12 @@ textarea,
 
 /* Color específico para las comillas en testimonios para que destaquen en oscuro */
 .dark-mode .testimonial-card::before {
-    color: #4A3E42;
+    color: #4A3539;
 }
 
 /* Modificadores de la sección de Servicios para que mantenga contraste */
 .dark-mode .services {
-    background-color: #3a4329;
-
-    /* Verde muy oscuro */
+    background-color: #2A2E1D;
 }
 
 .dark-mode .services p {
@@ -111,6 +104,31 @@ textarea,
 
 .dark-mode .menu-toggle span {
     background-color: var(--text-strong);
+}
+
+/* Footer Dark Mode Fix */
+.dark-mode footer {
+    background-color: #0E090A;
+    color: var(--text-white-med);
+}
+
+.dark-mode .footer-logo {
+    color: var(--text-strong);
+}
+
+.dark-mode .footer-bottom {
+    border-top-color: var(--border-light);
+    color: var(--text-white-dim);
+}
+
+.dark-mode .social-links a {
+    background-color: var(--overlay-white-15);
+    color: var(--text-strong);
+}
+
+.dark-mode .social-links a:hover {
+    background-color: var(--cta-btn);
+    color: var(--white);
 }
 
 .theme-toggle {

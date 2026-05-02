@@ -26,9 +26,9 @@ nav {
 }
 
 footer {
-    background-color: var(--text-strong);
+    background: radial-gradient(circle at top left, #4A3238, var(--text-strong));
     color: var(--white);
-    padding: 4rem 0 2rem;
+    padding: 6rem 0 3rem;
 }
 
 .footer-content {

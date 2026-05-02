@@ -6,7 +6,12 @@
     font-size: 1.1rem;
     cursor: pointer;
     border: none;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+.btn:active {
+    transform: scale(0.97);
 }
 
 .btn-primary {
