@@ -18,6 +18,9 @@ header {
     box-shadow: var(--shadow-sm);
 }
 
+    box-shadow: var(--shadow-sm);
+}
+
 nav {
     display: flex;
     justify-content: space-between;

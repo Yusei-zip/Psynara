@@ -1,38 +1,29 @@
-.text-center {
-    text-align: center;
+/* Scroll Progress Bar Styles */
+.scroll-progress-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    z-index: 1001;
+    overflow: hidden;
 }
 
-.mb-2 {
-    margin-bottom: 2rem;
+.scroll-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, var(--cta-btn), var(--cta-hover));
+    transition: width 0.1s ease-out;
 }
 
-.mb-4 {
-    margin-bottom: 4rem;
+/* Dark Mode adjustment for the track background */
+.dark-mode .scroll-progress-container {
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.pop-anim {
-    animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-}
-
-@keyframes pop {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
+/* Typography Utilities */
+.text-center { text-align: center; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-4 { margin-bottom: 4rem; }
