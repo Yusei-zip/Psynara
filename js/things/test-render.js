@@ -11,7 +11,7 @@ export class TestRender {
 
     renderList(tests, onSelect) {
         this.clear();
-        
+
         const title = document.createElement('h2');
         title.className = 'text-center mb-4';
         title.textContent = 'Selecciona un test para comenzar';
@@ -60,7 +60,7 @@ export class TestRender {
         // Header
         const header = document.createElement('div');
         header.className = 'test-header';
-        
+
         const backBtn = document.createElement('button');
         backBtn.className = 'btn-back';
         backBtn.innerHTML = '<i class="fas fa-arrow-left"></i> Salir';
@@ -81,7 +81,7 @@ export class TestRender {
         progressBar.className = 'progress-bar';
         progressBar.style.width = `${progress.percentage}%`;
         progressContainer.appendChild(progressBar);
-        
+
         const progressText = document.createElement('p');
         progressText.style.textAlign = 'right';
         progressText.style.fontSize = '0.9rem';
@@ -94,7 +94,7 @@ export class TestRender {
         // Question
         const qBlock = document.createElement('div');
         qBlock.className = 'question-block';
-        
+
         const qText = document.createElement('div');
         qText.className = 'question-text';
         qText.textContent = question.text;
@@ -139,7 +139,7 @@ export class TestRender {
         // Add visual feedback when option selected
         if (selectedValue === null) {
             optionsGrid.addEventListener('click', (e) => {
-                if(e.target.classList.contains('option-btn')) {
+                if (e.target.classList.contains('option-btn')) {
                     nextBtn.disabled = false;
                     nextBtn.style.opacity = '1';
                     nextBtn.style.cursor = 'pointer';
@@ -166,7 +166,7 @@ export class TestRender {
         // Header
         const header = document.createElement('div');
         header.className = 'test-header';
-        
+
         const title = document.createElement('h2');
         title.textContent = `Resultados: ${testTitle}`;
         title.style.margin = '0 auto';
@@ -196,11 +196,11 @@ export class TestRender {
         // WhatsApp Share Section
         const shareContainer = document.createElement('div');
         shareContainer.className = 'share-container';
-        
+
         const shareLabel = document.createElement('label');
         shareLabel.textContent = 'Para recibir una devolución personalizada, ingresa tu nombre y envía tus resultados:';
         shareLabel.htmlFor = 'userNameShare';
-        
+
         const nameInput = document.createElement('input');
         nameInput.type = 'text';
         nameInput.id = 'userNameShare';
@@ -214,12 +214,12 @@ export class TestRender {
         const wpButton = document.createElement('button');
         wpButton.className = 'btn whatsapp-share-btn';
         wpButton.innerHTML = '<i class="fab fa-whatsapp"></i> Enviar resultados por WhatsApp';
-        
+
         // Feedback Message Container
         const feedbackContainer = document.createElement('div');
         feedbackContainer.className = 'share-feedback fade-in';
         feedbackContainer.style.display = 'none';
-        
+
         const feedbackText = document.createElement('p');
         feedbackText.innerHTML = '<i class="fas fa-check-circle" style="color: var(--sage-green);"></i> Tu mensaje se abrió en WhatsApp. Solo debes enviarlo para completar el contacto.';
         feedbackText.style.marginTop = '1.5rem';
@@ -240,7 +240,7 @@ export class TestRender {
 
         feedbackContainer.appendChild(feedbackText);
         feedbackContainer.appendChild(resetBtn);
-        
+
         wpButton.onclick = () => {
             const userName = nameInput.value.trim();
             if (!userName) {
@@ -249,13 +249,13 @@ export class TestRender {
                 return;
             }
             errorSpan.style.display = 'none';
-            
+
             const message = `Hola, mi nombre es ${userName}.\nAcabo de realizar el ${testTitle} en tu sitio web.\nMi resultado fue: ${resultData.title}.\nPuntaje obtenido: ${resultData.score}.\n\nMe gustaría recibir más información o agendar una sesión.`;
-            
+
             const encodedMessage = encodeURIComponent(message);
             const phoneNumber = '595995679432';
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
+
             window.open(whatsappUrl, '_blank');
 
             // Visual state change
@@ -263,9 +263,9 @@ export class TestRender {
             wpButton.classList.add('btn-success', 'pop-anim');
             wpButton.disabled = true;
             nameInput.disabled = true;
-            
+
             feedbackContainer.style.display = 'block';
-            // Slight delay to allow display:block to apply before adding appear class for transition
+
             setTimeout(() => feedbackContainer.classList.add('appear'), 10);
         };
 
@@ -275,7 +275,7 @@ export class TestRender {
             wpButton.disabled = false;
             nameInput.disabled = false;
             nameInput.focus();
-            
+
             feedbackContainer.classList.remove('appear');
             setTimeout(() => {
                 feedbackContainer.style.display = 'none';
@@ -289,7 +289,7 @@ export class TestRender {
         shareContainer.appendChild(feedbackContainer);
         resContainer.appendChild(shareContainer);
 
-        // Actions
+
         const actions = document.createElement('div');
         actions.className = 'result-actions';
 
@@ -297,7 +297,7 @@ export class TestRender {
         btnAgenda.href = '#contacto';
         btnAgenda.className = 'btn btn-outline';
         btnAgenda.textContent = 'Volver al formulario web';
-        
+
         const btnList = document.createElement('button');
         btnList.className = 'btn btn-outline';
         btnList.textContent = 'Ver otros tests';
@@ -324,7 +324,7 @@ export class TestRender {
             printDiv.style.fontFamily = 'Inter, sans-serif';
             printDiv.style.borderRadius = '15px';
             printDiv.style.boxSizing = 'border-box';
-            
+
             const userName = nameInput.value.trim() || 'Anónimo';
             const dateStr = new Date().toLocaleDateString();
 
@@ -357,7 +357,7 @@ export class TestRender {
                 btnDownload.disabled = true;
 
                 const canvas = await html2canvas(printDiv, {
-                    scale: 2, 
+                    scale: 2,
                     useCORS: true,
                     backgroundColor: '#fdf6ec'
                 });
@@ -366,7 +366,7 @@ export class TestRender {
                 link.download = `Resultado_${testTitle.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.png`;
                 link.href = canvas.toDataURL('image/png');
                 link.click();
-                
+
                 btnDownload.innerHTML = originalText;
                 btnDownload.disabled = false;
             } catch (err) {

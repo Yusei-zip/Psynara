@@ -1,46 +1,59 @@
-/* theme.css - Sistema de Temas (Claro / Oscuro) */
-
-/* Transiciones suaves para los cambios de tema */
-body, header, section, div, p, h1, h2, h3, h4, span, a, button, input, textarea, .test-card, .service-card, .identify-card, .timeline-content, .testimonial-card, .contact-info, .contact-form, .contact-wrapper {
+body,
+header,
+section,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+span,
+a,
+button,
+input,
+textarea,
+.test-card,
+.service-card,
+.identify-card,
+.timeline-content,
+.testimonial-card,
+.contact-info,
+.contact-form,
+.contact-wrapper {
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* =========================================
-   Modo Oscuro (Dark Mode)
-   ========================================= */
+
 .dark-mode {
-    /* Brand Colors (Adjusted for dark mode contrast) */
-    --primary-bg: #1A1618; /* Fondo principal muy oscuro */
-    --light-bg: #231E20;   /* Fondo secundario oscuro */
-    --white: #2D2628;      /* Color base para tarjetas y contenedores (en lugar de blanco puro) */
-    
-    --text-strong: #FDF6EC; /* Texto claro principal */
-    --text-secondary: #D4C5C9; /* Texto secundario suave */
+
+    --primary-bg: #1A1618;
+
+    --light-bg: #231E20;
+
+    --white: #2D2628;
+
+    --text-strong: #FDF6EC;
+    --text-secondary: #D4C5C9;
     --text-muted: rgba(253, 246, 236, 0.6);
-    --text-inverse: #402A30; /* Texto que va sobre fondos primarios (como el botón terracota) */
-    
-    /* Brand Accents (Slightly brighter for dark mode visibility) */
-    --cta-btn: #E57A70;     
+    --text-inverse: #d7d4d5;
+
+    --cta-btn: #E57A70;
     --cta-hover: #D9665B;
-    --sage-green: #AAB381;  
-    --dusty-rose: #C28292;  
-    
-    /* Surfaces */
+    --sage-green: #AAB381;
+    --dusty-rose: #C28292;
+
     --surface-card: var(--white);
     --surface-input: #231E20;
     --surface-input-focus: #1A1618;
-    
-    /* Borders */
+
     --border-light: #3D3538;
     --border-input: #4A3E42;
     --border-focus: var(--sage-green);
-    
-    /* Semantic Colors */
-    --color-success: #25D366; /* Keep readable */
+
+    --color-success: #25D366;
     --color-success-hover: #1ebe57;
     --color-error: #E57A70;
-    
-    /* Overlays (Recalculated for dark bg) */
+
     --overlay-sage-light: rgba(170, 179, 129, 0.1);
     --overlay-sage-medium: rgba(170, 179, 129, 0.15);
     --overlay-sage-border: rgba(170, 179, 129, 0.25);
@@ -48,7 +61,7 @@ body, header, section, div, p, h1, h2, h3, h4, span, a, button, input, textarea,
     --overlay-white-10: rgba(255, 255, 255, 0.05);
     --overlay-white-15: rgba(255, 255, 255, 0.08);
     --overlay-white-20: rgba(255, 255, 255, 0.12);
-    
+
     /* Shadows (Darker and stronger for dark mode depth) */
     --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.2);
     --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -57,7 +70,7 @@ body, header, section, div, p, h1, h2, h3, h4, span, a, button, input, textarea,
     --shadow-btn: 0 4px 15px rgba(0, 0, 0, 0.3);
     --shadow-btn-hover: 0 6px 20px rgba(0, 0, 0, 0.4);
     --shadow-float: 2px 2px 10px rgba(0, 0, 0, 0.4);
-    
+
     /* Misc */
     --header-bg: rgba(30, 26, 28, 0.95);
     --timeline-dot: rgba(229, 122, 112, 0.2);
@@ -65,9 +78,6 @@ body, header, section, div, p, h1, h2, h3, h4, span, a, button, input, textarea,
     --text-white-med: rgba(253, 246, 236, 0.85);
 }
 
-/* =========================================
-   Ajustes Específicos Adicionales
-   ========================================= */
 /* Ajuste de color para la opción seleccionada en los tests */
 .dark-mode .option-btn.selected {
     font-weight: 600;
@@ -75,31 +85,34 @@ body, header, section, div, p, h1, h2, h3, h4, span, a, button, input, textarea,
 
 /* Ajuste del blob de fondo en el Hero para que no brille tanto en oscuro */
 .dark-mode .hero-bg-shape {
-    opacity: 0.1; 
+    opacity: 0.1;
 }
 
 /* Color específico para las comillas en testimonios para que destaquen en oscuro */
 .dark-mode .testimonial-card::before {
-    color: #4A3E42; 
+    color: #4A3E42;
 }
 
 /* Modificadores de la sección de Servicios para que mantenga contraste */
 .dark-mode .services {
-    background-color: #252A1C; /* Verde muy oscuro */
+    background-color: #3a4329;
+
+    /* Verde muy oscuro */
 }
-.dark-mode .services h2, 
+
+.dark-mode .services p {
+    color: var(--text-white-dim);
+}
+
+.dark-mode .services h2,
 .dark-mode .services-grid .service-card h3 {
     color: var(--text-strong);
 }
 
-/* Ajuste del icono del menú hamburguesa */
 .dark-mode .menu-toggle span {
     background-color: var(--text-strong);
 }
 
-/* =========================================
-   Estilos del Theme Toggle Button
-   ========================================= */
 .theme-toggle {
     background: none;
     border: none;

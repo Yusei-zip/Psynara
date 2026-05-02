@@ -1,7 +1,7 @@
 export class TestEngine {
     constructor() {
         this.currentTest = null;
-        this.answers = {}; // questionId -> selected option value
+        this.answers = {};
         this.currentQuestionIndex = 0;
     }
 
@@ -38,7 +38,6 @@ export class TestEngine {
 
     isFinished() {
         if (!this.currentTest) return false;
-        // Check if all questions have an answer
         for (const q of this.currentTest.questions) {
             if (this.answers[q.id] === undefined) return false;
         }
@@ -47,15 +46,14 @@ export class TestEngine {
 
     calculateResult() {
         if (!this.currentTest || !this.isFinished()) return null;
-        
+
         let totalScore = 0;
         for (const qId in this.answers) {
             totalScore += this.answers[qId];
         }
 
         const resultData = this.currentTest.evaluate(totalScore);
-        
-        // Optional: Save to localStorage
+
         this.saveHistory(this.currentTest.id, resultData);
 
         return {
@@ -67,7 +65,7 @@ export class TestEngine {
     getProgress() {
         if (!this.currentTest) return 0;
         const total = this.currentTest.questions.length;
-        const current = this.currentQuestionIndex + 1; // 1-based for display
+        const current = this.currentQuestionIndex + 1;
         return { current, total, percentage: (current / total) * 100 };
     }
 

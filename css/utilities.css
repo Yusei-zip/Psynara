@@ -1,13 +1,15 @@
-/* =========================================
-   Utilidades Generales
-   ========================================= */
+.text-center {
+    text-align: center;
+}
 
-/* Typography Utilities */
-.text-center { text-align: center; }
-.mb-2 { margin-bottom: 2rem; }
-.mb-4 { margin-bottom: 4rem; }
+.mb-2 {
+    margin-bottom: 2rem;
+}
 
-/* Animations */
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -24,6 +26,13 @@
 }
 
 @keyframes pop {
-    0% { transform: scale(0.8); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

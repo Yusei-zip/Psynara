@@ -1,23 +1,23 @@
-/* responsive.css - Capa adicional de estilos responsivos */
-/* Principio fundamental: No reescribir lógica de desktop, solo adaptar para pantallas más pequeñas. */
-
-/* =========================================
-   Tablets y Portátiles Pequeñas (max-width: 992px)
-   ========================================= */
 @media screen and (max-width: 992px) {
-    /* Tipografía y Espaciados Generales */
     html {
-        font-size: 95%; /* Reduce la fuente base ligeramente */
-    }
-    
-    section {
-        padding: 4rem 0; /* Menos padding vertical en secciones para aprovechar espacio */
+        font-size: 95%;
     }
 
-    /* Jerarquía visual (Títulos) */
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2.2rem; }
-    h3 { font-size: 1.4rem; }
+    section {
+        padding: 4rem 0;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
 
     /* Ajustes del Sistema de Tests */
     .test-container {
@@ -25,81 +25,83 @@
     }
 }
 
-/* =========================================
-   Teléfonos Móviles (max-width: 768px)
-   ========================================= */
 @media screen and (max-width: 768px) {
-    /* Tipografía y Espaciados Generales */
     html {
-        font-size: 90%; /* Escala la tipografía para móviles */
+        font-size: 90%;
     }
-    
+
     section {
         padding: 3rem 0;
     }
 
-    h1 { font-size: 2.5rem !important; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.3rem; }
-    p { font-size: 1.05rem; }
+    h1 {
+        font-size: 2.5rem !important;
+    }
 
-    /* Asegurar que todas las imágenes y contenedores sean fluidos */
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1.05rem;
+    }
+
     img {
         max-width: 100%;
         height: auto;
     }
-    
+
     .container {
         width: 92%;
     }
 
-    /* Navbar y Menú */
-    /* La lógica base de .menu-toggle y nav-links está en style.css, 
-       aquí reforzamos la usabilidad del menú desplegado. */
     .nav-links {
         padding: 1.5rem 0;
     }
-    
+
     .nav-links li {
         width: 100%;
         text-align: center;
         margin: 1rem 0;
     }
-    
+
     .nav-links a {
         display: block;
-        padding: 0.8rem; /* Aumenta el área táctil */
+        padding: 0.8rem;
+        /* Aumenta el área táctil */
     }
-    
+
     .nav-links .btn {
         display: inline-block;
         margin-top: 1rem;
     }
 
-    /* Botones más amigables al tacto */
     .btn {
         padding: 0.9rem 1.5rem;
     }
-    
+
     /* Hero Section */
     .hero {
-        padding-top: 100px; /* Evitar que el header fijo tape el contenido */
+        padding-top: 100px;
     }
-    
+
     .hero .empathy-text {
         font-size: 1.2rem;
     }
-    
+
     .hero p {
         margin: 0 auto 1.5rem;
     }
-    
+
     .hero-content .btn {
-        width: 100%; /* Call to Action principal a pantalla completa en móvil */
+        width: 100%;
         text-align: center;
     }
 
-    /* Formularios y Contacto */
     .form-group input,
     .form-group textarea {
         padding: 0.8rem;
@@ -108,57 +110,57 @@
     .contact-wrapper {
         border-radius: 15px;
     }
-    
+
     .contact-info {
         padding: 2rem 1.5rem;
     }
-    
+
     .contact-form {
         padding: 2rem 1.5rem;
     }
-    
+
     .contact-form .btn {
         width: 100%;
     }
-    
-    /* Sistema de Tests */
+
     .test-container {
         padding: 1.5rem 1.2rem;
         border-radius: 15px;
     }
-    
+
     .test-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
         padding-bottom: 1.5rem;
     }
-    
+
     .btn-back {
-        padding: 0.5rem 0; /* Asegurar área táctil */
+        padding: 0.5rem 0;
+        /* Asegurar área táctil */
     }
-    
+
     .options-grid .option-btn {
-        padding: 1.2rem 1rem; /* Área táctil más grande para opciones */
+        padding: 1.2rem 1rem;
     }
-    
+
     .result-score {
         font-size: 2.5rem;
     }
-    
+
     .result-actions {
         flex-direction: column;
         gap: 0.8rem;
     }
-    
+
     .result-actions .btn {
         width: 100%;
     }
-    
+
     .share-container {
         padding: 1.5rem;
     }
-    
+
     .share-feedback p {
         flex-direction: column;
         align-items: flex-start;
@@ -171,20 +173,22 @@
         text-align: center;
         gap: 1.5rem;
     }
-    
+
     .social-links {
         justify-content: center;
         width: 100%;
     }
 }
 
-/* =========================================
-   Móviles Pequeños (max-width: 480px)
-   ========================================= */
 @media screen and (max-width: 480px) {
-    h1 { font-size: 2rem !important; }
-    h2 { font-size: 1.6rem; }
-    
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
     .whatsapp-float {
         width: 50px;
         height: 50px;
@@ -194,21 +198,18 @@
     }
 }
 
-
-/* Migrated from style.css */
-/* Responsive */
 @media (max-width: 992px) {
     .hero {
         flex-direction: column;
         text-align: center;
         padding-top: 120px;
     }
-    
+
     .hero-content {
         padding-right: 0;
         margin-bottom: 3rem;
     }
-    
+
     .hero p {
         margin: 0 auto 2rem;
     }
@@ -216,7 +217,7 @@
     .about-wrapper {
         flex-direction: column;
     }
-    
+
     .contact-wrapper {
         flex-direction: column;
     }
@@ -226,7 +227,7 @@
     .menu-toggle {
         display: flex;
     }
-    
+
     .nav-links {
         position: absolute;
         top: 100%;
@@ -235,11 +236,11 @@
         background-color: var(--primary-bg);
         flex-direction: column;
         padding: 2rem 0;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: clip-path 0.4s ease-in-out;
     }
-    
+
     .nav-links.active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
